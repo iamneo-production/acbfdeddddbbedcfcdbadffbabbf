@@ -7,7 +7,7 @@ describe('Testing Stopwatch', () => {
     jest.setTimeout(30000);
 
 
-    test('FE_before_start', () => {
+    test('testcase1', () => {
         
         act(() => {
             render(<Stopwatch />);
@@ -25,7 +25,7 @@ describe('Testing Stopwatch', () => {
 
     }, 30000);
 
-    test('FE_running_stopwatch', async () => {
+    test('testcase2', async () => {
 
         
         act(() => {
@@ -36,8 +36,7 @@ describe('Testing Stopwatch', () => {
         const reset = screen.getByTestId('reset');
 
         const time = screen.getByTestId('time');
-
-        fireEvent.click(start);
+fireEvent.click(start);
 
         expect(screen.queryByTestId('start')).toBeNull();
         expect(screen.queryByTestId('pause')).toBeInTheDocument();
@@ -62,8 +61,6 @@ describe('Testing Stopwatch', () => {
         })
 
         fireEvent.click(reset);
-        expect(time.textContent.split(' ').join('')).toBe('00:00:00');
-
-    })
+        expect(time.textContent.split(' ').join('')).toBe('00:00:00');})
 
 })
