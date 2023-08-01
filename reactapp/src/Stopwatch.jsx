@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './Stopwatch.css';
+
 const Stopwatch = () => {
   // state to track the elapsed time
   const [disable, setDisable] = useState(true);
@@ -17,7 +17,10 @@ const Stopwatch = () => {
 
   useEffect(() => {
     let interval = null;
-    if (isRunning) {interval = setInterval(() => {setTime((Time) => time + 1);}, 1000);
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTime((time) => time + 1);
+      }, 1000);
     } else if (!isRunning && time !== 0) {
       clearInterval(interval);
     }
@@ -30,7 +33,7 @@ const Stopwatch = () => {
     setIsRunning(true);
   };
 
-  const handlePause = () => {
+  const handlePause = () => {
     setIsRunning(false);
   };
 
@@ -88,4 +91,4 @@ const Stopwatch = () => {
   );
 };
 
-export default Stopwatch;
+export default Stopwatch;
